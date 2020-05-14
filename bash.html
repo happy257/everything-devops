@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Site title</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="" />
+
+  <link href="./css/tailwind.min.css" rel="stylesheet" />
+  <link href="./css/custom.css" rel="stylesheet" />
+</head>
+
+<body class="gradient leading-relaxed tracking-wide flex flex-col">
+  <div class="container mx-auto">
+    <div class="px-3 lg:px-0">
+      <h1 class="my-4 text-2xl md:text-3xl lg:text-5xl font-black leading-tight text-white">
+        Everything DevOps!
+      </h1>
+    </div>
+  </div>
+
+  <section class="bg-white border-b py-10 ">
+    <div class="container mx-auto flex flex-wrap">
+      <h2 class="w-full my-2 text-xl font-black leading-tight text-gray-800 lg:mt-8">
+        BASH
+      </h2>
+
+      <div class="container mx-auto mt-8 px-8">
+
+        <div class="border-l-4 border-black-500 p-4 mb-3">
+          <p class="font-bold text-gray-600">Make directory</p>
+          <code class="bg-gray-600 text-white p-1 rounded text-sm">mkdir <i>dirname</i></code>
+        </div>
+
+        <div class="border-l-4 border-black-500 p-4 mb-3">
+          <p class="font-bold text-gray-600">Command objective</p>
+          <p class="text-gray-600">Command Option Description</p>
+          <code class="bg-gray-600 text-white p-1 rounded text-sm">command-name <i>param-name</i></code>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!--Footer-->
+  <footer class="bg-white ">
+    <div class="container mx-auto mt-8 px-8">
+      <div class="w-full flex flex-col md:flex-row py-6">
+
+        <div class="flex-1">
+          <br>
+          <p class="uppercase font-extrabold text-gray-500 md:mb-6">&copy; 2020 Everything Devops</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /*Toggle dropdown list*/
+    /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+    function check(e) {
+      var target = (e && e.target) || (event && event.srcElement);
+
+      //Nav Menu
+      if (!checkParent(target, navMenuDiv)) {
+        // click NOT on the menu
+        if (checkParent(target, navMenu)) {
+          // click on the link
+          if (navMenuDiv.classList.contains("hidden")) {
+            navMenuDiv.classList.remove("hidden");
+          } else {
+            navMenuDiv.classList.add("hidden");
+          }
+        } else {
+          // click both outside link and outside menu, hide menu
+          navMenuDiv.classList.add("hidden");
+        }
+      }
+    }
+    function checkParent(t, elm) {
+      while (t.parentNode) {
+        if (t == elm) {
+          return true;
+        }
+        t = t.parentNode;
+      }
+      return false;
+    }
+  </script>
+</body>
+
+</html>
